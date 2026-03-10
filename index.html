@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Local Business Schema Markup -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Bakery",
+ "name": "New Happy Baker's",
+ "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587",
+ "description": "Fresh cakes and baked goods for every celebration.",
+ "address": {
+   "@type": "PostalAddress",
+   "streetAddress": "Bank of Baroda Road",
+   "addressLocality": "Palej",
+   "addressRegion": "Gujarat",
+   "postalCode": "392220",
+   "addressCountry": "IN"
+ },
+ "geo": {
+   "@type": "GeoCoordinates",
+   "latitude": "21.920552937083983",
+   "longitude": "73.07420079370092"
+ },
+ "telephone": "+919824483686"
+}
+</script>
+
+	<!-- ============================================
+         SEO OPTIMIZATION
+    ============================================ -->
+    
+    <!-- Primary Title Tag - Optimized for Search -->
+    <title>Best Bakery in Palej | Custom Cakes & Pastries | New Happy Baker's | new happy bakers | newhappybakers</title>
+    
+    <!-- Meta Description - Optimized for Click-Through Rate -->
+    <meta name="description" content="Order fresh custom cakes, pastries, cookies & bakery items online. New Happy Baker's specializes in birthday cakes, wedding cakes, and custom designs. Fast delivery available.">
+    
+    <!-- Meta Keywords for Local Search -->
+    <meta name="keywords" content="bakery, custom cakes, birthday cakes, wedding cakes, fresh pastries, cookies, bakery near me, cake delivery, custom cake orders, New Happy Baker's">
+    
+    <!-- Author & Robots -->
+    <meta name="author" content="New Happy Baker's">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    
+    <!-- Canonical URL (Prevent Duplicate Content) -->
+    <link rel="canonical" href="https://www.newhappybakers.netlify.app/">
+    
+    <!-- Open Graph Tags for Social Media Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.newhappybakers.netlify.app/">
+    <meta property="og:title" content="New Happy Baker's | Fresh Cakes & Custom Cake Orders">
+    <meta property="og:description" content="Order fresh custom cakes, pastries, cookies & bakery items online. Custom designs for birthdays, weddings & celebrations.">
+    <meta property="og:image" content="images/bakery-preview.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="New Happy Baker's">
+    <meta property="og:locale" content="en_US">
+    
+  
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+	
+	<!-- Mobile & Tablet Responsive Styles -->
+    <link rel="stylesheet" href="mobile.css">
+	
+</head>
+<body>
+
+ <!-- ========================================= NAVIGATION -->
+<nav class="navbar">
+    <div class="logo">🍰 New Happy Baker's</div>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+		 <li><a href="#bakery-items">Menu</a></li>
+        <li><a href="#order">Order</a></li>
+		<li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+	
+  <!-- ✅ CORRECT: Single Cart Icon in Navbar -->
+    <div class="nav-icons">
+        <div class="cart-icon" id="cartIcon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-badge" id="cartBadge">0</span>
+        </div>
+           <!-- Hamburger Menu -->
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</nav>
+
+<!-- ✅ CORRECT: Single Cart Panel (Remove all duplicates) -->
+<div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+        <h3>🛒 Your Cart</h3>
+        <button class="cart-close" id="cartClose">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    
+    <div class="cart-items" id="cartItems">
+        <div class="empty-cart">
+            <i class="fas fa-shopping-basket"></i>
+            <p>Your cart is empty</p>
+            <small>Add items from the menu to get started</small>
+        </div>
+    </div>
+    
+    <div class="cart-footer">
+        <div class="cart-total">
+            <span>Total Items:</span>
+            <strong id="cartTotal">0</strong>
+        </div>
+		
+       <button type="button" class="btn btn-whatsapp" id="whatsappOrder">
+<i class="fab fa-whatsapp"></i>
+<span>Order on WhatsApp</span>
+</button>
+    </div>
+</div>
+
+<!-- ========================================= CART NOTIFICATION POPUP -->
+<div class="cart-notification" id="cartNotification">
+    <div class="notification-content">
+        <i class="fas fa-check-circle"></i>
+        <span>Item added to cart!</span>
+    </div>
+</div>
+
+<!-- ========================================= FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/+919824483686" class="float-wa" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- ✅ CORRECT: Single Overlay -->
+<div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Fresh Cakes Made With Love</h1>
+            <p class="tagline">Custom Cakes for Every Celebration</p>
+            <div class="hero-buttons">
+                <a href="#bakery-items" class="btn btn-primary">View Menu</a>
+                <a href="#order" class="btn btn-secondary">Order Now</a>
+            </div>
+        </div>
+    </header>
+
+   
+	
+
+<!-- ========================================= GALLERY SECTION -->
+<section id="gallery" class="section bg-white">
+    <div class="container">
+        <h2 class="section-title">Our Gallery</h2>
+        <p class="section-subtitle">Moments captured in every bite</p>
+        
+        <div class="gallery-grid">
+            <!-- Gallery Image 1 -->
+            <div class="gallery-item" data-image="images/red-velvet.jpg ">
+                <img src="images/red-velvet.jpg " alt="Red velvet Cake">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+
+            <!-- Gallery Image 2 -->
+            <div class="gallery-item" data-image="images/black-forest.jpg">
+                <img src="images/black-forest.jpg" alt="Black Forest Cake">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+
+            <!-- Gallery Image 3 -->
+            <div class="gallery-item" data-image="images/red-velvet.jpg">
+                <img src="images/red-velvet.jpg" alt="Red Velvet Cake">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+
+            <!-- Gallery Image 4 -->
+            <div class="gallery-item" data-image="images/pineapple.jpg">
+                <img src="images/pineapple.jpg" alt="Pineapple Cake">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+
+            <!-- Gallery Image 5 -->
+            <div class="gallery-item" data-image="images/birthday.jpg">
+                <img src="images/birthday.jpg" alt="Custom Birthday Cake">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+
+            <!-- Gallery Image 6 -->
+            <div class="gallery-item" data-image="images/chocolate-pestry.jpg">
+                <img src="images/chocolate-pestry.jpg" alt="Chocolate Pastry">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="Gallery Preview">
+    </div>
+</div>
+
+	<!-- ========================================= TODAY'S SPECIAL SECTION -->
+<section id="todays-special" class="section bg-cream">
+    <div class="container">
+        <div class="special-section">
+            <div class="special-content">
+                <div class="special-badge">
+                    <span>🌟 Today's Special</span>
+                </div>
+                <div class="special-image">
+                    <img src="images/chocolate.jpg" alt="Chocolate Cake Special">
+                </div>
+                <div class="special-details">
+                    <h2>Chocolate Cake</h2>
+                    <p>Rich and moist chocolate layers with creamy ganache frosting. Our most loved cake made fresh daily!</p>
+                    <div class="special-price">₹650 / kg</div>
+                    <button class="btn btn-order-special" 
+                            data-item="Today's Special - Chocolate Cake" 
+                            data-price="₹650 / kg">
+                        Order On Whatsapp <i class="fab fa-whatsapp"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+   <!-- Bakery Items Section -->
+<section id="bakery-items" class="section bg-cream">
+    <div class="container">
+        <h2 class="section-title">Our Bakery Items</h2>
+        <p class="section-subtitle">Freshly baked delights made with love and the finest ingredients</p>
+		
+		<!-- ✅ NEW: Search Bar -->
+        <div class="search-container">
+            <div class="search-wrapper">
+                <i class="fas fa-search search-icon"></i>
+                <input 
+                    type="text" 
+                    id="menuSearch" 
+                    class="search-input" 
+                    placeholder="Search for cakes, pastries, cookies..."
+                    autocomplete="off"
+                >
+                <button id="clearSearch" class="clear-search" style="display: none;">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Category Filter Buttons -->
+        <div class="filter-buttons">
+            <button class="filter-btn" data-filter="cakes">🎂 Cakes</button>
+            <button class="filter-btn" data-filter="pastries">🍰 Pastries</button>
+            <button class="filter-btn" data-filter="cookies">🍪 Cookies</button>
+            <button class="filter-btn" data-filter="snacks">🥨 Puffs & Snacks</button>
+			 <button class="filter-btn" data-filter="breads">🍞 Breads</button>
+        </div>
+
+        <!-- Bakery Items Grid -->
+        <div class="bakery-grid">
+            
+            <!-- ==================== CAKES ==================== -->
+<div class="bakery-item" data-category="cakes">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/chocolate.jpg" alt="Chocolate Cake">
+            <span class="badge bestseller">Bestseller</span>
+        </div>
+        <div class="item-content">
+            <h3>Chocolate Cake</h3>
+            <p>Rich and moist chocolate layers with creamy ganache frosting</p>
+            <div class="item-price">₹450 / kg</div>
+            <!-- MODIFIED: Added data-price attribute -->
+           <button class="btn btn-add-cart" 
+                                data-item="Chocolate Cake" 
+                                data-price="₹450 / kg">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+           </button>
+        </div>
+    </div>
+</div>
+
+<div class="bakery-item" data-category="cakes">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/black-forest.jpg" alt="Black Forest Cake">
+        </div>
+        <div class="item-content">
+            <h3>Black Forest Cake</h3>
+            <p>Classic sponge with cherry filling, chocolate shavings & cream</p>
+            <div class="item-price">₹500 / kg</div>
+            <!-- MODIFIED: Added data-price attribute -->
+            <button class="btn btn-add-cart" 
+                                data-item="Black Forest Cake" 
+                                data-price="₹500 / kg">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+           </button>
+        </div>
+    </div>
+</div>
+
+<div class="bakery-item" data-category="cakes">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/red-velvet.jpg" alt="Red Velvet Cake">
+            <span class="badge premium">Premium</span>
+        </div>
+        <div class="item-content">
+            <h3>Red Velvet Cake</h3>
+            <p>Velvety red sponge with cream cheese frosting & cocoa hints</p>
+            <div class="item-price">₹600 / kg</div>
+            <!-- MODIFIED: Added data-price attribute -->
+            <button class="btn btn-add-cart" 
+                                data-item="Red Velvet Cake" 
+                                data-price="₹600 / kg">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+           </button>
+        </div>
+    </div>
+</div>
+
+<div class="bakery-item" data-category="cakes">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/pineapple.jpg" alt="Pineapple Cake">
+        </div>
+        <div class="item-content">
+            <h3>Pineapple Cake</h3>
+            <p>Light & fluffy sponge topped with fresh pineapple & cream</p>
+            <div class="item-price">₹400 / kg</div>
+            <!-- MODIFIED: Added data-price attribute -->
+            <button class="btn btn-add-cart" 
+                                data-item="Pineapple Cake" 
+                                data-price="₹400 / kg">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+           </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- ==================== PASTRIES ==================== -->
+<div class="bakery-item" data-category="pastries">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/chocolate-pestry.jpg" alt="Chocolate Pastry">
+        </div>
+        <div class="item-content">
+            <h3>Chocolate Pastry</h3>
+            <p>Decadent chocolate pastry with rich cocoa cream filling</p>
+            <div class="item-price">₹60 / pc</div>
+            <!-- MODIFIED: Added data-price attribute -->
+            <button class="btn btn-add-cart" 
+                    data-item="Chocolate Pastry" 
+                    data-price="₹60 / pc">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="bakery-item" data-category="pastries">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/butterscotch-pestry.jpg" alt="Butterscotch Pastry">
+        </div>
+        <div class="item-content">
+            <h3>Butterscotch Pastry</h3>
+            <p>Caramelized butterscotch chips in creamy vanilla custard</p>
+            <div class="item-price">₹55 / pc</div>
+            <!-- MODIFIED: Added data-price attribute -->
+           <button class="btn btn-add-cart" 
+                    data-item="Butterscotch Pastry" 
+                    data-price="₹55 / pc">
+                 <i class="fas fa-cart-plus"></i> Add to Cart
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="bakery-item" data-category="pastries">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/Red-Velvet-Pestry.jpg" alt="Red Velvet Pastry">
+            <span class="badge popular">Popular</span>
+        </div>
+        <div class="item-content">
+            <h3>Red Velvet Pastry</h3>
+            <p>Mini red velvet delight with cream cheese frosting</p>
+            <div class="item-price">₹70 / pc</div>
+            <!-- MODIFIED: Added data-price attribute -->
+            <button class="btn btn-add-cart" 
+                                data-item="Red Velvet Pastry" 
+                                data-price="₹70 / kg">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+           </button>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== COOKIES ==================== -->
+<div class="bakery-item" data-category="cookies">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/butter-cookie.jpg" alt="Butter Cookies">
+        </div>
+        <div class="item-content">
+            <h3>Butter Cookies</h3>
+            <p>Melt-in-your-mouth classic butter cookies </p>
+            <div class="item-price">₹120 / kg</div>
+            <!-- MODIFIED: Added data-price attribute -->
+            <button class="btn btn-add-cart" 
+                                data-item="Butter Cookies" 
+                                data-price="₹120 / kg">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+           </button>
+        </div>
+    </div>
+</div>
+
+<div class="bakery-item" data-category="cookies">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/Chocochip-cookies.jpg" alt="Choco Chip Cookies">
+        </div>
+        <div class="item-content">
+            <h3>Choco Chip Cookies</h3>
+            <p>Chewy cookies loaded with premium chocolate chips </p>
+            <div class="item-price">₹150 / kg</div>
+            <!-- MODIFIED: Added data-price attribute -->
+           <button class="btn btn-add-cart" 
+                                data-item="Choco Chip Cookies" 
+                                data-price="₹150 / kg">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+           </button>
+        </div>
+    </div>
+</div>
+
+<div class="bakery-item" data-category="cookies">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/jeera-bis.jpg" alt="Jeera Biscuits">
+        </div>
+        <div class="item-content">
+            <h3>Jeera Biscuits</h3>
+            <p>Crispy cumin biscuits - perfect tea-time snack (500g)</p>
+            <div class="item-price">₹120 / pack</div>
+            <!-- MODIFIED: Added data-price attribute -->
+            <button class="btn btn-add-cart" 
+                                data-item="Jeera Buscuits" 
+                                data-price="₹120 / pack">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+           </button>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== SNACKS ==================== -->
+<div class="bakery-item" data-category="snacks">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/veg-puff.jpg" alt="Veg Puff">
+        </div>
+        <div class="item-content">
+            <h3>Veg Puff</h3>
+            <p>Flaky pastry filled with spiced pototes</p>
+            <div class="item-price">₹20 / pc</div>
+            <!-- MODIFIED: Added data-price attribute -->
+           <button class="btn btn-add-cart" 
+                                data-item="Veg Puff" 
+                                data-price="₹20 / pc">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+           </button>
+        </div>
+    </div>
+</div>
+
+<div class="bakery-item" data-category="snacks">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/paneer-puff.jpg" alt="chines Puff">
+        </div>
+        <div class="item-content">
+            <h3>Chines Puff</h3>
+            <p>Soft puff pastry stuffed with savory noodles filling</p>
+            <div class="item-price">₹20 / pc</div>
+            <!-- MODIFIED: Added data-price attribute -->
+             <button class="btn btn-add-cart" 
+                                data-item="Chines Puff" 
+                                data-price="₹20 / pc">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+           </button>
+        </div>
+    </div>
+</div>
+
+<div class="bakery-item" data-category="snacks">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/cheese-puff.jpg" alt="Cheese Puff">
+        </div>
+        <div class="item-content">
+            <h3>Cheese Puff</h3>
+            <p>Soft puff pastry stuffed with savory noodles filling</p>
+            <div class="item-price">₹25 / pc</div>
+            <!-- MODIFIED: Added data-price attribute -->
+             <button class="btn btn-add-cart" 
+                                data-item="Cheese Puff" 
+                                data-price="₹25 / pc">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+           </button>
+        </div>
+    </div>
+</div>
+
+<div class="bakery-item" data-category="snacks">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/Khari.jpg" alt=" Butter Khari">
+        </div>
+        <div class="item-content">
+            <h3> Butter Khari 250g </h3>
+            <p>Layered, crispy puff biscuits - perfect with chai </p>
+            <div class="item-price">₹60/ pack</div>
+            <!-- MODIFIED: Added data-price attribute -->
+             <button class="btn btn-add-cart" 
+                                data-item="Butter Khari 250g" 
+                                data-price="₹60 / pack">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+           </button>
+        </div>
+    </div>
+</div>
+
+<div class="bakery-item" data-category="snacks">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/Khari.jpg" alt="Buuter Khari">
+        </div>
+        <div class="item-content">
+            <h3>Butter Khari 500g</h3>
+            <p>Layered, crispy puff biscuits - perfect with chai </p>
+            <div class="item-price">₹120/ pack</div>
+            <!-- MODIFIED: Added data-price attribute -->
+             <button class="btn btn-add-cart" 
+                                data-item="Butter Khari 500g" 
+                                data-price="₹120 / pack">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+           </button>
+        </div>
+    </div>
+ </div>
+ 
+ <div class="bakery-item" data-category="snacks">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/jeera-khari.jpg" alt="jeeraKhari">
+        </div>
+        <div class="item-content">
+            <h3> Jeera Khari 250g</h3>
+            <p>Layered, crispy puff biscuits - perfect with chai </p>
+            <div class="item-price">₹60/ pack</div>
+            <!-- MODIFIED: Added data-price attribute -->
+            <button class="btn btn-add-cart" 
+                                data-item="jerraKhari 250g" 
+                                data-price="₹60 / pack">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+           </button>
+        </div>
+    </div>
+</div>
+	
+<div class="bakery-item" data-category="snacks">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/jeera-khari.jpg" alt="jeeraKhari">
+        </div>
+        <div class="item-content">
+            <h3>Jeera Khari 500g</h3>
+            <p>Layered, crispy puff biscuits - perfect with chai </p>
+            <div class="item-price">₹120/ pack</div>
+            <!-- MODIFIED: Added data-price attribute -->
+            <button class="btn btn-add-cart" 
+                                data-item="jeeraKhari 500g" 
+                                data-price="₹120 / pack">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+           </button>
+        </div>
+    </div>
+</div>
+
+<div class="bakery-item" data-category="snacks">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/toast.jpg" alt="Jerra Toast">
+        </div>
+        <div class="item-content">
+            <h3>Jerra Toast 250g</h3>
+            <p>Layered, crispy puff biscuits - perfect with chai </p>
+            <div class="item-price">₹60/ pack</div>
+            <!-- MODIFIED: Added data-price attribute -->
+            <button class="btn btn-add-cart" 
+                                data-item="Jeera Toast 250g" 
+                                data-price="₹60 / pack">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+           </button>
+        </div>
+    </div>
+</div>
+
+<div class="bakery-item" data-category="snacks">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/toast.jpg" alt="Jeera Toast">
+        </div>
+        <div class="item-content">
+            <h3>Jeera Toast 500g</h3>
+            <p>Layered, crispy puff biscuits - perfect with chai </p>
+            <div class="item-price">₹110/ pack</div>
+            <!-- MODIFIED: Added data-price attribute -->
+            <button class="btn btn-add-cart" 
+                                data-item="Jerra Toast 500g" 
+                                data-price="₹110 / pack">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+           </button>
+        </div>
+    </div>
+</div>
+
+<div class="bakery-item" data-category="snacks">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/baby-toast.jpg" alt="Baby Toast 250g">
+        </div>
+        <div class="item-content">
+            <h3>Baby Toast 250g</h3>
+            <p>Layered, crispy puff biscuits - perfect with chai </p>
+            <div class="item-price">₹50/ pack</div>
+            <!-- MODIFIED: Added data-price attribute -->
+            <button class="btn btn-add-cart" 
+                                data-item="Baby Toast 250g" 
+                                data-price="₹50 / pack">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+           </button>
+        </div>
+    </div>
+</div>
+
+<div class="bakery-item" data-category="snacks">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/baby-toast.jpg" alt="Baby Toast">
+        </div>
+        <div class="item-content">
+            <h3>Baby Toast 500g</h3>
+            <p>Layered, crispy puff biscuits - perfect with chai </p>
+            <div class="item-price">₹100/ pack</div>
+            <!-- MODIFIED: Added data-price attribute -->
+           <button class="btn btn-add-cart" 
+                                data-item="Baby Toast 500g" 
+                                data-price="₹100 / pack">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+           </button>
+        </div>
+    </div>
+</div>
+
+<div class="bakery-item" data-category="snacks">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/butter-toast.jpg" alt="Jerra Butter">
+        </div>
+        <div class="item-content">
+            <h3>Jerra Butter 250g</h3>
+            <p>Layered, crispy puff biscuits - perfect with chai </p>
+            <div class="item-price">₹45/ pack</div>
+            <!-- MODIFIED: Added data-price attribute -->
+            <button class="btn btn-add-cart" 
+                                data-item="Jerra Butter 250g" 
+                                data-price="₹45 / pack">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+           </button>
+        </div>
+    </div>
+</div>
+
+<div class="bakery-item" data-category="snacks">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/butter-toast.jpg" alt="Jerra Butter">
+        </div>
+        <div class="item-content">
+            <h3>Jerra Butter 500g</h3>
+            <p>Layered, crispy puff biscuits - perfect with chai </p>
+            <div class="item-price">₹90/ pack</div>
+            <!-- MODIFIED: Added data-price attribute -->
+            <button class="btn btn-add-cart" 
+                                data-item="Jerra Butter 500g" 
+                                data-price="₹90 / pack">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+           </button>
+        </div>
+    </div>
+</div>
+
+<div class="bakery-item" data-category="snacks">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/farmas.jpg" alt="Farmas Makhaniya">
+        </div>
+        <div class="item-content">
+            <h3>Farmas Makhaniya 250g</h3>
+            <p>Layered, crispy puff biscuits - perfect with chai </p>
+            <div class="item-price">₹60/ pack</div>
+            <!-- MODIFIED: Added data-price attribute -->
+            <button class="btn btn-add-cart" 
+                                data-item="Farmas Makhaniya 250g" 
+                                data-price="₹60 / pack">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+           </button>
+        </div>
+    </div>
+</div>
+
+<div class="bakery-item" data-category="snacks">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/fruit-toast.jpg" alt="Fruit Toast">
+        </div>
+        <div class="item-content">
+            <h3>Fruit Toast 250g</h3>
+            <p>Layered, crispy puff biscuits - perfect with chai </p>
+            <div class="item-price">₹60/ pack</div>
+            <!-- MODIFIED: Added data-price attribute -->
+            <button class="btn btn-add-cart" 
+                                data-item="Fruit Toast 250g" 
+                                data-price="₹60 / pack">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+           </button>
+        </div>
+    </div>
+</div>
+
+<div class="bakery-item" data-category="snacks">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/fruit-toast.jpg" alt="Fruit Toast">
+        </div>
+        <div class="item-content">
+            <h3>Fruit Toast 500g</h3>
+            <p>Layered, crispy puff biscuits - perfect with chai </p>
+            <div class="item-price">₹120/ pack</div>
+            <!-- MODIFIED: Added data-price attribute -->
+            <button class="btn btn-add-cart" 
+                                data-item="Fruit Toast 500g" 
+                                data-price="₹120 / pack">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+           </button>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== BREADS ==================== -->
+<div class="bakery-item" data-category="breads">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/white-bread.jpg" alt="White Bread">
+        </div>
+        <div class="item-content">
+            <h3>White Bread </h3>
+            <p>Soft and freshly baked white bread loaf</p>
+            <div class="item-price">₹40 / loaf</div>
+            <button class="btn btn-add-cart" 
+                    data-item="White Bread" 
+                    data-price="₹40 / loaf">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="bakery-item" data-category="breads">
+    <div class="item-card">
+        <div class="item-image">
+            <img src="images/brown-bread.jpg" alt="Brown Bread">
+        </div>
+        <div class="item-content">
+            <h3>Brown Bread</h3>
+            <p>Healthy whole wheat bread baked fresh daily</p>
+            <div class="item-price">₹45 / loaf</div>
+            <button class="btn btn-add-cart" 
+                    data-item="Brown Bread" 
+                    data-price="₹45 / loaf">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+            </button>
+        </div>
+    </div>
+</div>
+
+    </div>
+</section>
+
+
+
+   
+
+<!-- ========================================= ORDER SECTION -->
+<section id="order" class="section bg-white">
+    <div class="container">
+        <h2 class="section-title">Place Your Order</h2>
+        <p class="section-subtitle">Choose your preferred ordering method</p>
+        
+        <!-- Forms Container -->
+        <div class="order-forms-container">
+            
+            <!-- Left Column: Quick Cake Order -->
+            <div class="order-form-column">
+                <div class="form-section-header">
+                    <h3>🍰 Quick Cake Order</h3>
+                    <p>Order from our menu items</p>
+                </div>
+                
+                <form id="orderForm" autocomplete="off">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-user"></i> Your Name</label>
+                            <input type="text" id="name" placeholder=" Enter Your Name " required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-phone"></i> Phone Number</label>
+                            <input type="tel" id="phone" placeholder=" Enter Your Phone Number " required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-birthday-cake"></i> Cake Type</label>
+                        <select id="cakeType">
+                            <option value="Chocolate Cake">Chocolate Cake</option>
+                            <option value="Black Forest Cake">Black Forest Cake</option>
+                            <option value="Red Velvet Cake">Red Velvet Cake</option>
+                            <option value="Pineapple Cake">Pineapple Cake</option>
+                            <option value="Custom Birthday Cake">Custom Birthday Cake</option>
+                            <option value="Other">Other (Specify in message)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-comment"></i> Message / Custom Details</label>
+                        <textarea id="message" rows="4" placeholder="Describe your custom design, delivery date, etc."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fab fa-whatsapp"></i> Send Order via WhatsApp
+                    </button>
+                </form>
+            </div>
+
+            <!-- Right Column: Custom Cake Order -->
+            <div class="order-form-column">
+                <div class="form-section-header">
+                    <h3>🎂 Custom Cake Order</h3>
+                    <p>Create your dream cake</p>
+                </div>
+                
+                <form id="customCakeForm">
+                    <!-- Cake Flavor -->
+                    <div class="form-group">
+                        <label><i class="fas fa-ice-cream"></i> Cake Flavor</label>
+                        <select id="cakeFlavor" required>
+                            <option value="">Select Flavor</option>
+                            <option value="Chocolate">Chocolate</option>
+                            <option value="Vanilla">Vanilla</option>
+                            <option value="Red Velvet">Red Velvet</option>
+                            <option value="Black Forest">Black Forest</option>
+                            <option value="Pineapple">Pineapple</option>
+                            <option value="Strawberry">Strawberry</option>
+                            <option value="Butterscotch">Butterscotch</option>
+                            <option value="Coffee">Coffee</option>
+                        </select>
+                    </div>
+
+                    <!-- Cake Size -->
+                    <div class="form-group">
+                        <label><i class="fas fa-weight-hanging"></i> Cake Size</label>
+                        <select id="cakeSize" required>
+                            <option value="">Select Size</option>
+                            <option value="1kg">1kg - Serves 8-10 people</option>
+                            <option value="2kg">2kg - Serves 15-20 people</option>
+                            <option value="3kg">3kg - Serves 25-30 people</option>
+                        </select>
+                    </div>
+
+                    <!-- Theme Selection -->
+                    <div class="form-group">
+                        <label><i class="fas fa-birthday-cake"></i> Occasion Theme</label>
+                        <select id="cakeTheme" required>
+                            <option value="">Select Theme</option>
+                            <option value="Birthday">🎂 Birthday</option>
+                            <option value="Wedding">💍 Wedding</option>
+                            <option value="Anniversary">💕 Anniversary</option>
+                            <option value="Baby Shower">👶 Baby Shower</option>
+                            <option value="Graduation">🎓 Graduation</option>
+                            <option value="Corporate">🏢 Corporate</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Upload Image -->
+                    <div class="form-group">
+                        <label><i class="fas fa-image"></i> Upload Design Image (Optional)</label>
+                        <input type="file" id="cakeImage" accept="image/*">
+                        <small>📷 After clicking Order, please send the reference image in WhatsApp.</small>
+                    </div>
+
+                    <!-- Delivery Date -->
+                    <div class="form-group">
+                        <label><i class="fas fa-calendar-alt"></i> Delivery Date</label>
+                        <input type="date" id="deliveryDate" required>
+                    </div>
+
+                    <!-- Additional Details -->
+                    <div class="form-group">
+                        <label><i class="fas fa-comment"></i> Additional Details</label>
+                        <textarea id="customDetails" rows="3" placeholder="Any special messages, colors, or design preferences..."></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fab fa-whatsapp"></i> Send Custom Cake Request
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+ <!-- About Section -->
+    <section id="about" class="section bg-white">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <p class="section-subtitle">Baking happiness since 2026</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Welcome to New Happy Baker's!</h3>
+                    <p>At New Happy Baker's, we believe every celebration deserves a special and delicious centerpiece. Our bakery is known for freshly baked cakes and pastries made with the finest and freshest ingredients to give you the best taste in every bite.</p>
+                    <p>We also specialize in custom cake designs, creating beautiful cakes that perfectly match your celebration, theme, and personal ideas!</p>
+					<p>You can even enjoy our live cake making experience, where our expert bakers prepare cakes fresh in front of you with skill, care, and creativity.</p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="icon"><i class="fas fa-heart"></i></div>
+                            <span>Fresh Ingredients</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon"><i class="fas fa-magic"></i></div>
+                            <span>Custom Designs</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon"><i class="fas fa-birthday-cake"></i></div>
+                            <span>Live Cake Making</span>
+                       </div>
+                    </div>
+                </div>
+                <div class="about-img">
+                <!-- UPDATED: Descriptive alt text -->
+                <img src="images/chocolate2.jpg" alt="Fresh homemade cakes and pastries at New Happy Baker's bakery">
+            </div>
+            </div>
+        </div>
+    </section>
+	
+
+<!-- ========================================= CUSTOMER TESTIMONIALS SECTION -->
+<section id="testimonials" class="section bg-cream">
+    <div class="container">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <p class="section-subtitle">Real reviews from happy customers</p>
+		
+		<!-- ADD THIS BUTTON HERE -->
+        <div class="google-review-btn-container">
+            <a href="https://g.page/r/CS9yGH1fG58pEAI/review" 
+               target="_blank" 
+               class="btn btn-google-review">
+                <i class="fab fa-google"></i> Leave a Review on Google
+            </a>
+        </div>
+        
+        <div class="testimonials-grid">
+            <!-- Review Card 1 -->
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="customer-avatar">
+                        <img src="images/tohidpatel-rw.png" alt="Customer">
+                    </div>
+                    <div class="customer-info">
+                        <h4>Patel Tohid</h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-body">
+                    <p>"Absolutely amazing cakes! The chocolate cake was so moist and delicious. Perfect for my daughter's birthday party. Will definitely order again!"</p>
+                </div>
+            </div>
+
+            <!-- Review Card 2 -->
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="customer-avatar">
+                        <img src="images/dr.tosif-rw.png" alt="Customer">
+                    </div>
+                    <div class="customer-info">
+                        <h4>Dr.Tosif Patel</h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-body">
+                    <p>"Best bakery in the city! The custom birthday cake was exactly what I wanted. Great quality and fast delivery. Highly recommended!"</p>
+                </div>
+            </div>
+
+            <!-- Review Card 3 -->
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="customer-avatar">
+                        <img src="images/salman-rw.png" alt="Customer">
+                    </div>
+                    <div class="customer-info">
+                        <h4>Salman Patel</h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-body">
+                    <p>"Love their pastries! The red velvet pastry is to die for. Fresh ingredients and beautiful presentation. My go-to for all celebrations!"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-cream">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-subtitle">We'd love to hear from you</p>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Visit us or call us for any inquiries</p>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>New Happy baker's, Bank of Baroda Road, Behind Main Bazar, Palej. 392220</span>
+                    </div>
+                                   <!-- MODIFIED: Phone number now clickable -->
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+919824483686">+91 98244 83686</a>
+                </div>
+
+                <!-- MODIFIED: Email now clickable -->
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:newhappybakers@gmail.com">newhappybakers@gmail.com</a>
+                </div>
+                    
+                </div>
+                <div class="map-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3701.368548865554!2d73.07170097502305!3d21.920378756559487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395f93314e0822ed%3A0x299f1b5f7d18722f!2sNew%20Happy%20Baker&#39;s!5e0!3m2!1sen!2sin!4v1772342566773!5m2!1sen!2sin" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- ========================================= FOOTER -->
+<footer>
+    <div class="footer-wave"></div>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>🍰 New Happy Baker's</h3>
+                <p>Fresh cakes and baked goods for every celebration. Made with love since 2010.</p>
+                <div class="footer-social">
+                    <a href="https://facebook-f.com/" target="_blank" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/newhappybakers" target="_blank" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+				<!-- ⭐ Rating -->
+    <div class="footer-rating">
+        <span>Customer Rating</span>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+		   <div class="rating-text">
+        <strong>4.5 / 5</strong> • 250+ Happy Customers
+           </div>
+    </div>
+ </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+					<li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#bakery-items">Menu</a></li>
+					<li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+					
+					
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Categories</h4>
+                <ul>
+                    <!-- MODIFIED: Added data-filter attribute -->
+                    <li><a href="#bakery-items" data-filter="cakes">Cakes</a></li>
+                    <li><a href="#bakery-items" data-filter="pastries">Pastries</a></li>
+                    <li><a href="#bakery-items" data-filter="cookies">Cookies</a></li>
+                    <li><a href="#bakery-items" data-filter="snacks">Snacks</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Business Hours</h4>
+                <ul>
+                    <li>Mon - Sat: 8AM - 9PM</li>
+                    <li>Sunday: 9AM - 6PM</li>
+                    <li><a href="tel:+919824483686">📞 +91 98244 83686</a></li>
+                </ul>
+            </div>
+			
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 New Happy Baker's. All rights reserved. | Designed by <a href="#">Tohid Patel</a></p>
+        </div>
+    </div>
+</footer>
+
+<!-- Order Success Popup -->
+<div id="order-success" class="order-success">
+<i class="fas fa-check-circle"></i>
+Order Sent Successfully!
+</div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/+919824483686" class="float-wa" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+	
+    <!-- Scripts -->
+    <script src="script.js"></script>
+
+</body>
+</html>
